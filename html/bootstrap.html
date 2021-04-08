@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <div class="left-menu">
+        <p>Menu Title</p>
+    </div>
+
+    <div class="black-background">
+        <div class="white-background">
+            <p>로그인하세요</p>
+            <form>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email" id="email">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">전송</button>
+            </form> <button class="btn-exit">X</button>
+        </div>
+    </div>
+
+    <div class="nav-menu">
+        <h4>SHOUSE Studio</h4>
+        <p id="nav-sub-button">Products</p>
+    </div>
+
+    <ul class="list-group nav-sub">
+        <li class="list-group-item">Outer</li>
+        <li class="list-group-item">shose</li>
+        <li class="list-group-item">shirts</li>
+
+    </ul>
+
+
+
+    <div class="jumbotron main-background">
+        <h1 class="display-4">Shirts Studio</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">log in</a>
+        </p>
+
+        <a id="show-menu" class="btn btn-danger " href="#" role="button">Show Menu</a>
+    </div>
+
+    <h4 class="my-4 text-center">Showcase</h4>
+    <div style="overflow: hidden;  position: relative;">
+        <div class="slide-container">
+
+            <div class="slide-box">
+                <img src="img/product1-1.jpg" alt="">
+            </div>
+            <div class="slide-box">
+                <img src="img/product2.jpg" alt="">
+            </div>
+            <div class="slide-box">
+                <img src="img/product3.jpg" alt="">
+            </div>
+
+        </div>
+        <button class="slide-next">Next</button>
+    </div>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+
+    <div class="my-5"></div>
+
+
+
+
+    <!--    <input id="test-input" type="text">-->
+
+    <script>
+        var 지금보이는사진 = 1;
+        $('.slide-next').click(function() {
+            
+            $('.slide-container').css('transform', 'translateX(-' + 지금보이는사진 + '00vw)');
+                if(지금보이는사진 < $('.slide-container').length){
+                지금보이는사진 = 지금보이는사진 + 1;
+                    return 지금보이는사진;
+                }
+                    
+              });
+            
+            
+//            if (지금보이는사진 == 1) {
+//                $('.slide-container').css('transform', 'translateX(-100vw)');
+//                지금보이는사진 = 지금보이는사진 + 1;
+//            } else if (지금보이는사진 == 2) {
+//               $('.slide-container').css('transform', 'translateX(-200vw)');
+//                지금보이는사진 = 지금보이는사진 + 1;
+//            }
+      
+//
+//        $('.slide-2').click(function() {
+//            $('.slide-container').css('transform', 'translateX(-100vw)');
+//
+//        });
+//
+//        $('.slide-3').click(function() {
+//            $('.slide-container').css('transform', 'translateX(-200vw)');
+//
+//        });
+
+
+
+
+
+
+        $('.btn-lg').on('click', function() {
+
+            $('.black-background').css('transform', 'translateY(0px)');
+        });
+
+        $('.btn-exit').click(function() {
+            $('.black-background').css('transform', 'translateY(-1200px)');
+        });
+
+        $('#nav-sub-button').click(function() {
+            $('.nav-sub').slideToggle();
+        });
+    </script>
+
+</body></html>
